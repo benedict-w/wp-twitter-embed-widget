@@ -67,7 +67,7 @@ class WP_Twitter_Embed extends WP_Widget {
         <?php echo $before_widget; ?>
         <div id="twitter-feed">
             <?php if ($title) : ?>
-            <h3><?php echo $before_title . $title . $after_title; ?></h3>
+            <?php echo $before_title . $title . $after_title; ?>
             <?php endif; ?>
             <a class="twitter-timeline" href="https://twitter.com/<?php echo $handle; ?>"
                data-dnt="<?php echo $dnt; ?>"
