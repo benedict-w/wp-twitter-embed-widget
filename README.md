@@ -1,4 +1,4 @@
-** WP Twitter Embed **
+**WP Twitter Embed**
 
 A simple widget that embeds a Twitter timeline.
 See https://dev.twitter.com/docs/embedded-timelines
