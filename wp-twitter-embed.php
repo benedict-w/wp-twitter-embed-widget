@@ -7,13 +7,13 @@
  * Author URI: http://www.benedict-wallis.com
  */
 
-add_action('widgets_init', 'twitter_embed_widget');
+add_action('widgets_init', 'WP_Twitter_Embed');
 
 /**
  * twitter_embed_widget
  */
-function twitter_embed_widget() {
-    register_widget('twitter_embed_widget');
+function WP_Twitter_Embed() {
+    register_widget('WP_Twitter_Embed');
 }
 
 class WP_Twitter_Embed extends WP_Widget {
@@ -31,8 +31,6 @@ class WP_Twitter_Embed extends WP_Widget {
         );
 
         $control_ops = array(
-            'width' => 300,
-            'height' => 350,
             'id_base' => 'twitter-embed-widget'
         );
 
@@ -52,10 +50,16 @@ class WP_Twitter_Embed extends WP_Widget {
         // widget heading
         $title = apply_filters('widget_title', $instance['title'] );
 
-        // variables from the widget settings.
+        // variables from the widget settings
         $handle = $instance['handle'];
+
+        // "do not track" - https://support.twitter.com/articles/20169453-twitter-supports-do-not-track
         $dnt = true;
+
+        // widget id - from https://dev.twitter.com/docs/embedded-timelines
         $widget_id = $instance['widget_id'];
+
+        // no. of tweets
         $limit = $instance['limit'];
 
         ?>
